@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: clindigest-mcp
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npx tsc
+    startCommand: node dist/index.js
+    envVars:
+      - key: TRANSPORT
+        value: http
+      - key: PORT
+        value: "3000"
+      - key: ANTHROPIC_API_KEY
+        sync: false  # Set manually in Render dashboard
+    healthCheckPath: /health

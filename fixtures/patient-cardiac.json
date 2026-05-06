@@ -1,0 +1,296 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "synth-john-002",
+        "name": [{ "use": "official", "given": ["John", "Hyun"], "family": "Park" }],
+        "gender": "male",
+        "birthDate": "1955-11-22",
+        "identifier": [
+          { "system": "urn:oid:1.2.36.146.595.217.0.1", "value": "MRN-20240002", "type": { "text": "MRN" } }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-john-cad",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "53741008", "display": "Coronary artery disease" }]
+        },
+        "clinicalStatus": { "coding": [{ "code": "active" }] },
+        "onsetDateTime": "2024-09-15",
+        "severity": { "coding": [{ "display": "Severe" }] }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-john-postop",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "code": {
+          "coding": [{ "display": "Status post coronary artery bypass grafting x3" }]
+        },
+        "clinicalStatus": { "coding": [{ "code": "active" }] },
+        "onsetDateTime": "2026-05-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-john-afib",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "49436004", "display": "Atrial fibrillation" }]
+        },
+        "clinicalStatus": { "coding": [{ "code": "active" }] },
+        "onsetDateTime": "2026-05-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-john-dm2",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "code": {
+          "coding": [{ "display": "Type 2 diabetes mellitus" }]
+        },
+        "clinicalStatus": { "coding": [{ "code": "active" }] },
+        "onsetDateTime": "2019-03-20"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-john-warfarin",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "medicationCodeableConcept": { "coding": [{ "display": "Warfarin 5 MG Oral Tablet" }] },
+        "dosageInstruction": [{
+          "text": "Take 5mg once daily — monitor INR",
+          "doseAndRate": [{ "doseQuantity": { "value": 5, "unit": "mg" } }],
+          "timing": { "code": { "text": "Once daily" } }
+        }],
+        "authoredOn": "2026-05-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-john-metoprolol",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "medicationCodeableConcept": { "coding": [{ "display": "Metoprolol Tartrate 25 MG Oral Tablet" }] },
+        "dosageInstruction": [{
+          "text": "Take 25mg twice daily for rate control",
+          "doseAndRate": [{ "doseQuantity": { "value": 25, "unit": "mg" } }],
+          "timing": { "code": { "text": "Twice daily" } }
+        }],
+        "authoredOn": "2026-05-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-john-morphine",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "medicationCodeableConcept": { "coding": [{ "display": "Morphine Sulfate 2 MG/ML Injectable Solution" }] },
+        "dosageInstruction": [{
+          "text": "2-4mg IV every 4 hours as needed for pain",
+          "doseAndRate": [{ "doseQuantity": { "value": 4, "unit": "mg" } }],
+          "timing": { "code": { "text": "Every 4 hours PRN" } }
+        }],
+        "authoredOn": "2026-05-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-john-insulin",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "medicationCodeableConcept": { "coding": [{ "display": "Insulin Glargine 100 UNT/ML Injectable" }] },
+        "dosageInstruction": [{
+          "text": "20 units subcutaneous at bedtime",
+          "doseAndRate": [{ "doseQuantity": { "value": 20, "unit": "units" } }],
+          "timing": { "code": { "text": "Once daily at bedtime" } }
+        }],
+        "authoredOn": "2026-05-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-hr",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8867-4", "display": "Heart rate" }] },
+        "valueQuantity": { "value": 94, "unit": "bpm" },
+        "effectiveDateTime": "2026-05-04T22:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-bp-sys",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure" }] },
+        "valueQuantity": { "value": 118, "unit": "mmHg" },
+        "effectiveDateTime": "2026-05-04T22:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-bp-dia",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure" }] },
+        "valueQuantity": { "value": 72, "unit": "mmHg" },
+        "effectiveDateTime": "2026-05-04T22:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-temp",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8310-5", "display": "Body temperature" }] },
+        "valueQuantity": { "value": 37.6, "unit": "°C" },
+        "effectiveDateTime": "2026-05-04T22:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-spo2",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "2708-6", "display": "Oxygen saturation" }] },
+        "valueQuantity": { "value": 94, "unit": "%" },
+        "effectiveDateTime": "2026-05-04T22:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-inr",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "6301-6", "display": "INR" }] },
+        "valueQuantity": { "value": 1.8, "unit": "ratio" },
+        "effectiveDateTime": "2026-05-04T06:00:00Z",
+        "referenceRange": [{ "low": { "value": 2.0 }, "high": { "value": 3.0 }, "text": "Therapeutic range 2.0-3.0 for AFib" }],
+        "interpretation": [{ "coding": [{ "code": "L", "display": "Below therapeutic" }] }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-hgb",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "718-7", "display": "Hemoglobin" }] },
+        "valueQuantity": { "value": 10.2, "unit": "g/dL" },
+        "effectiveDateTime": "2026-05-04T06:00:00Z",
+        "referenceRange": [{ "low": { "value": 13.5, "unit": "g/dL" }, "high": { "value": 17.5, "unit": "g/dL" } }],
+        "interpretation": [{ "coding": [{ "code": "L", "display": "Low" }] }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-john-glucose",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }],
+        "code": { "coding": [{ "display": "Blood glucose (POC)" }] },
+        "valueQuantity": { "value": 162, "unit": "mg/dL" },
+        "effectiveDateTime": "2026-05-04T18:00:00Z",
+        "referenceRange": [{ "low": { "value": 70, "unit": "mg/dL" }, "high": { "value": 140, "unit": "mg/dL" } }],
+        "interpretation": [{ "coding": [{ "code": "H", "display": "High" }] }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-john-nkda",
+        "patient": { "reference": "Patient/synth-john-002" },
+        "code": { "coding": [{ "display": "No known drug allergies" }] },
+        "criticality": "low"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-john-inpatient",
+        "status": "in-progress",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "class": { "code": "IMP", "display": "Inpatient" },
+        "type": [{ "coding": [{ "display": "Inpatient hospitalization" }] }],
+        "reasonCode": [{ "coding": [{ "display": "Coronary artery bypass grafting" }] }],
+        "period": { "start": "2026-05-01T07:00:00Z" }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-john-cabg",
+        "status": "completed",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "code": { "coding": [{ "system": "http://snomed.info/sct", "code": "232717009", "display": "Coronary artery bypass grafting x3 (LIMA-LAD, SVG-OM1, SVG-RCA)" }] },
+        "performedDateTime": "2026-05-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-john-chesttube",
+        "status": "completed",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "code": { "coding": [{ "display": "Chest tube removal" }] },
+        "performedDateTime": "2026-05-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-john-extubation",
+        "status": "completed",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "code": { "coding": [{ "display": "Extubation" }] },
+        "performedDateTime": "2026-05-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "cp-john-postop",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-john-002" },
+        "title": "Post-CABG recovery plan",
+        "activity": [
+          { "detail": { "description": "Ambulation 3x daily with PT assistance", "status": "in-progress" } },
+          { "detail": { "description": "Incentive spirometry every 2 hours while awake", "status": "in-progress" } },
+          { "detail": { "description": "Warfarin titration — target INR 2.0-3.0", "status": "in-progress" } },
+          { "detail": { "description": "Sternal precautions education", "status": "scheduled" } },
+          { "detail": { "description": "Cardiac rehab referral upon discharge", "status": "scheduled" } }
+        ]
+      }
+    }
+  ]
+}

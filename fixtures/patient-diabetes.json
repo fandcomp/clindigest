@@ -1,0 +1,319 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "synth-maria-001",
+        "name": [{ "use": "official", "given": ["Maria", "Elena"], "family": "Santos" }],
+        "gender": "female",
+        "birthDate": "1968-03-15",
+        "identifier": [
+          { "system": "urn:oid:1.2.36.146.595.217.0.1", "value": "MRN-20240001", "type": { "text": "MRN" } }
+        ],
+        "address": [{ "city": "Springfield", "state": "IL", "postalCode": "62704" }],
+        "telecom": [{ "system": "phone", "value": "555-0142" }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-maria-dm2",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "44054006", "display": "Type 2 diabetes mellitus" }]
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "onsetDateTime": "2015-06-10",
+        "severity": { "coding": [{ "system": "http://snomed.info/sct", "code": "6736007", "display": "Moderate" }] },
+        "recordedDate": "2015-06-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-maria-htn",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "38341003", "display": "Essential hypertension" }]
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "onsetDateTime": "2018-01-20",
+        "recordedDate": "2018-01-20"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-maria-ckd",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "code": {
+          "coding": [{ "system": "http://snomed.info/sct", "code": "431855005", "display": "Chronic kidney disease stage 2" }]
+        },
+        "clinicalStatus": { "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/condition-clinical", "code": "active" }] },
+        "onsetDateTime": "2023-04-12",
+        "recordedDate": "2023-04-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-maria-metformin",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "medicationCodeableConcept": {
+          "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "860975", "display": "Metformin 500 MG Oral Tablet" }]
+        },
+        "dosageInstruction": [{
+          "text": "Take 500mg twice daily with meals",
+          "doseAndRate": [{ "doseQuantity": { "value": 500, "unit": "mg" } }],
+          "timing": { "code": { "text": "Twice daily" } }
+        }],
+        "authoredOn": "2015-06-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-maria-lisinopril",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "medicationCodeableConcept": {
+          "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "314076", "display": "Lisinopril 10 MG Oral Tablet" }]
+        },
+        "dosageInstruction": [{
+          "text": "Take 10mg once daily in the morning",
+          "doseAndRate": [{ "doseQuantity": { "value": 10, "unit": "mg" } }],
+          "timing": { "repeat": { "frequency": 1, "period": 1, "periodUnit": "d" } }
+        }],
+        "authoredOn": "2018-02-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-maria-atorvastatin",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "medicationCodeableConcept": {
+          "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "259255", "display": "Atorvastatin 20 MG Oral Tablet" }]
+        },
+        "dosageInstruction": [{
+          "text": "Take 20mg once daily at bedtime",
+          "doseAndRate": [{ "doseQuantity": { "value": 20, "unit": "mg" } }],
+          "timing": { "code": { "text": "Once daily at bedtime" } }
+        }],
+        "authoredOn": "2019-05-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-maria-empagliflozin",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "medicationCodeableConcept": {
+          "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "1545149", "display": "Empagliflozin 10 MG Oral Tablet" }]
+        },
+        "dosageInstruction": [{
+          "text": "Take 10mg once daily in the morning",
+          "doseAndRate": [{ "doseQuantity": { "value": 10, "unit": "mg" } }],
+          "timing": { "repeat": { "frequency": 1, "period": 1, "periodUnit": "d" } }
+        }],
+        "authoredOn": "2024-08-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-maria-aspirin",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "medicationCodeableConcept": {
+          "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "243670", "display": "Aspirin 81 MG Oral Tablet" }]
+        },
+        "dosageInstruction": [{
+          "text": "Take 81mg once daily",
+          "doseAndRate": [{ "doseQuantity": { "value": 81, "unit": "mg" } }],
+          "timing": { "repeat": { "frequency": 1, "period": 1, "periodUnit": "d" } }
+        }],
+        "authoredOn": "2019-05-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-hr",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8867-4", "display": "Heart rate" }] },
+        "valueQuantity": { "value": 82, "unit": "bpm" },
+        "effectiveDateTime": "2026-05-04T14:30:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-bp-sys",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8480-6", "display": "Systolic blood pressure" }] },
+        "valueQuantity": { "value": 148, "unit": "mmHg" },
+        "effectiveDateTime": "2026-05-04T14:30:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-bp-dia",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8462-4", "display": "Diastolic blood pressure" }] },
+        "valueQuantity": { "value": 92, "unit": "mmHg" },
+        "effectiveDateTime": "2026-05-04T14:30:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-temp",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "8310-5", "display": "Body temperature" }] },
+        "valueQuantity": { "value": 36.8, "unit": "°C" },
+        "effectiveDateTime": "2026-05-04T14:30:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-spo2",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "vital-signs" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "2708-6", "display": "Oxygen saturation" }] },
+        "valueQuantity": { "value": 97, "unit": "%" },
+        "effectiveDateTime": "2026-05-04T14:30:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-hba1c",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "4548-4", "display": "Hemoglobin A1c" }] },
+        "valueQuantity": { "value": 8.9, "unit": "%" },
+        "effectiveDateTime": "2026-04-28",
+        "referenceRange": [{ "low": { "value": 4.0, "unit": "%" }, "high": { "value": 5.6, "unit": "%" } }],
+        "interpretation": [{ "coding": [{ "code": "HH", "display": "Critical high" }] }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-creatinine",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "2160-0", "display": "Creatinine" }] },
+        "valueQuantity": { "value": 1.4, "unit": "mg/dL" },
+        "effectiveDateTime": "2026-04-28",
+        "referenceRange": [{ "low": { "value": 0.6, "unit": "mg/dL" }, "high": { "value": 1.2, "unit": "mg/dL" } }],
+        "interpretation": [{ "coding": [{ "code": "H", "display": "High" }] }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-egfr",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "33914-3", "display": "eGFR" }] },
+        "valueQuantity": { "value": 62, "unit": "mL/min/1.73m2" },
+        "effectiveDateTime": "2026-04-28",
+        "referenceRange": [{ "low": { "value": 90, "unit": "mL/min/1.73m2" } }],
+        "interpretation": [{ "coding": [{ "code": "L", "display": "Low" }] }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-maria-glucose",
+        "status": "final",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "category": [{ "coding": [{ "system": "http://terminology.hl7.org/CodeSystem/observation-category", "code": "laboratory" }] }],
+        "code": { "coding": [{ "system": "http://loinc.org", "code": "2339-0", "display": "Fasting glucose" }] },
+        "valueQuantity": { "value": 186, "unit": "mg/dL" },
+        "effectiveDateTime": "2026-05-04T06:30:00Z",
+        "referenceRange": [{ "low": { "value": 70, "unit": "mg/dL" }, "high": { "value": 100, "unit": "mg/dL" } }],
+        "interpretation": [{ "coding": [{ "code": "H", "display": "High" }] }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-maria-pcn",
+        "patient": { "reference": "Patient/synth-maria-001" },
+        "code": { "coding": [{ "system": "http://www.nlm.nih.gov/research/umls/rxnorm", "code": "7980", "display": "Penicillin" }] },
+        "reaction": [{ "manifestation": [{ "coding": [{ "display": "Urticaria (hives)" }] }], "severity": "moderate" }],
+        "criticality": "high"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-maria-sulfa",
+        "patient": { "reference": "Patient/synth-maria-001" },
+        "code": { "coding": [{ "display": "Sulfonamide antibiotics" }] },
+        "reaction": [{ "manifestation": [{ "coding": [{ "display": "Maculopapular rash" }] }], "severity": "mild" }],
+        "criticality": "low"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc-maria-office",
+        "status": "finished",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "class": { "code": "AMB", "display": "Outpatient" },
+        "type": [{ "coding": [{ "display": "Office visit" }] }],
+        "reasonCode": [{ "coding": [{ "display": "Diabetes follow-up — HbA1c review" }] }],
+        "period": { "start": "2026-05-04T14:00:00Z", "end": "2026-05-04T14:45:00Z" }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-maria-fundoscopy",
+        "status": "completed",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "code": { "coding": [{ "display": "Dilated fundoscopy (diabetic retinopathy screen)" }] },
+        "performedDateTime": "2026-03-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "cp-maria-dm",
+        "status": "active",
+        "subject": { "reference": "Patient/synth-maria-001" },
+        "title": "Diabetes management plan",
+        "activity": [
+          { "detail": { "description": "Daily fasting blood glucose monitoring", "status": "in-progress" } },
+          { "detail": { "description": "HbA1c every 3 months", "status": "in-progress" } },
+          { "detail": { "description": "Annual dilated eye exam", "status": "completed" } },
+          { "detail": { "description": "Low-carb diet counseling with dietitian", "status": "scheduled" } },
+          { "detail": { "description": "Nephrology referral for CKD monitoring", "status": "scheduled" } }
+        ]
+      }
+    }
+  ]
+}
