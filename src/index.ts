@@ -443,6 +443,18 @@ async function runHTTP(): Promise<void> {
     });
   });
 
+  // GET /mcp — browser-friendly info page
+  app.get("/mcp", (_req, res) => {
+    res.json({
+      endpoint: "/mcp",
+      method: "POST",
+      protocol: "MCP Streamable HTTP (JSON-RPC 2.0)",
+      usage: "Send POST requests with Content-Type: application/json and Accept: application/json, text/event-stream",
+      tools: ["get_patient_context", "generate_handoff_summary", "generate_referral_summary", "generate_discharge_summary"],
+      docs: "https://github.com/fandcomp/clindigest",
+    });
+  });
+
   // MCP endpoint (stateless Streamable HTTP + SHARP context)
   app.post("/mcp", async (req, res) => {
     // Extract SHARP healthcare context from request headers
