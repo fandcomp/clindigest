@@ -1,3 +1,14 @@
+---
+title: ClinDigest
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 3000
+pinned: false
+short_description: FHIR Clinical Summary Generator MCP Server
+---
+
 # ClinDigest — FHIR Clinical Summary Generator
 
 > **MCP server that transforms scattered FHIR patient data into actionable clinical summaries, tailored to the audience.**
